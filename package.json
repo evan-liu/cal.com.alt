@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "description": "cal.com alternative implementation",
   "license": "MIT",
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.10.0",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
 }
