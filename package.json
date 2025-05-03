@@ -1,0 +1,7 @@
+{
+  "name": "cal.com.alt",
+  "version": "0.0.1",
+  "description": "cal.com alternative implementation",
+  "license": "MIT",
+  "packageManager": "pnpm@10.10.0"
+}
