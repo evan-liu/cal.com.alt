@@ -8,6 +8,9 @@
     },
     {
       "path": "./packages/shared/domain-infra"
+    },
+    {
+      "path": "./packages/shared/runtime-utils"
     }
   ]
 }

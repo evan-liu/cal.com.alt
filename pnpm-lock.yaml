@@ -71,6 +71,8 @@ importers:
 
   packages/shared/domain-infra: {}
 
+  packages/shared/runtime-utils: {}
+
 packages:
 
   '@ampproject/remapping@2.3.0':
