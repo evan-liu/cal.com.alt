@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./packages/shared/domain-core"
+    },
+    {
+      "path": "./packages/shared/domain-infra"
     }
   ]
 }
