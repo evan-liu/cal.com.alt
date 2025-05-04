@@ -4,3 +4,6 @@
 .gitignore
 .prettierignore
 pnpm-lock.yaml
+
+/.nx/cache
+/.nx/workspace-data
