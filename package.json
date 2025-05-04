@@ -2,9 +2,11 @@
   "name": "cal.com.alt",
   "version": "0.0.1",
   "description": "cal.com alternative implementation",
+  "type": "module",
   "license": "MIT",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
+    "prettier": "^3.5.3",
     "typescript": "^5.8.3"
   }
 }
