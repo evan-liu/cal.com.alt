@@ -1,16 +1,17 @@
 [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B)](https://codecov.io/gh/evan-liu/cal.com.alt)
 
-An alternative implementation of cal.com,
+An alternative implementation of [cal.com](https://github.com/calcom/cal.com),
 built with a different tech stack
 using intentional alternatives to its key technologies.
 
 ## Tech stack
 
-| cal.com                             | alt                      |     |
-| ----------------------------------- | ------------------------ | --- |
-| [yarn](https://yarnpkg.com/)        | [pnpm](https://pnpm.io/) |     |
-| [Turborepo](https://turborepo.com/) | [nx](https://nx.dev/)    |     |
-| ...(🚧 WIP)                         |                          |     |
+| cal.com                                                      | alt                             |     |
+| ------------------------------------------------------------ | ------------------------------- | --- |
+| [yarn](https://yarnpkg.com/)                                 | [pnpm](https://pnpm.io/)        |     |
+| [Turborepo](https://turborepo.com/)                          | [nx](https://nx.dev/)           |     |
+| [Conventional Commits](https://www.conventionalcommits.org/) | [Gitmoji](https://gitmoji.dev/) |     |
+| ...(🚧 WIP)                                                  |                                 |     |
 
 ## Architecture
 
