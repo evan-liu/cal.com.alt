@@ -28,3 +28,8 @@ pragmatic approach to DDD in TypeScript—"DDD-lite".
 | domain-core   | Core types and interfaces for the DDD-lite domain layer       | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=domain-core)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=domain-core)     |
 | domain-infra  | Infrastructure and support code for the DDD-lite domain layer | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=domain-infra)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=domain-infra)   |
 | runtime-utils | Utilities for runtime use in TypeScript and Node.js           | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=runtime-utils)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=runtime-utils) |
+
+## Coding Style
+
+- [const vs let](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/scope-closures/apA.md#const-antly-confused)
+- [=== vs ==](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/types-grammar/ch4.md#type-aware-equality)
