@@ -1,0 +1,21 @@
+codecov:
+  branch: main
+
+component_management:
+  default_rules:
+    statuses:
+      - type: project
+        target: auto
+  individual_components:
+    - component_id: domain-core
+      name: domain-core
+      paths:
+        - packages/shared/domain-core/**
+    - component_id: domain-infra
+      name: domain-infra
+      paths:
+        - packages/shared/domain-infra/**
+    - component_id: runtime-utils
+      name: runtime-utils
+      paths:
+        - packages/shared/runtime-utils/**
