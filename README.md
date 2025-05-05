@@ -1,24 +1,25 @@
 [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B)](https://codecov.io/gh/evan-liu/cal.com.alt)
 
 An alternative implementation of [cal.com](https://github.com/calcom/cal.com),
-built with a different tech stack
-using intentional alternatives to its key technologies.
+using intentional alternatives.
+
+(🚧 Work in progress)
 
 ## Tech stack
 
-| cal.com                                                      | alt                             |     |
-| ------------------------------------------------------------ | ------------------------------- | --- |
-| [yarn](https://yarnpkg.com/)                                 | [pnpm](https://pnpm.io/)        |     |
-| [Turborepo](https://turborepo.com/)                          | [nx](https://nx.dev/)           |     |
-| [Conventional Commits](https://www.conventionalcommits.org/) | [Gitmoji](https://gitmoji.dev/) |     |
-| ...(🚧 WIP)                                                  |                                 |     |
+| cal.com                                                      | .alt                            |                                |
+| ------------------------------------------------------------ | ------------------------------- | ------------------------------ |
+| [yarn](https://yarnpkg.com/)                                 | [pnpm](https://pnpm.io/)        | Package manager with workspace |
+| [Turborepo](https://turborepo.com/)                          | [nx](https://nx.dev/)           | Monorepo tool                  |
+| [Conventional Commits](https://www.conventionalcommits.org/) | [Gitmoji](https://gitmoji.dev/) | Commit messages format         |
+|                                                              |                                 | (... more coming)              |
 
 ## Architecture
 
-cal.com is a complex system
+cal.com is a complex scheduling system
 that can benefit from Domain-Driven Design and Clean Architecture.  
-This project reimplements its architecture using a lightweight,
-pragmatic form of DDD in TypeScript—"DDD-lite".
+This project reimplements its architecture with a lightweight,
+pragmatic approach to DDD in TypeScript—"DDD-lite".
 
 ## Packages
 
