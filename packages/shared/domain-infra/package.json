@@ -2,6 +2,7 @@
   "name": "@calcom-alt/domain-infra",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -12,5 +13,7 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@calcom-alt/domain-core": "workspace:*"
+  }
 }
