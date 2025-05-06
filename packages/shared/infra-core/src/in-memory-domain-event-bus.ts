@@ -6,10 +6,13 @@ import {
   type DomainEventListener,
   type DomainEventListenerCtor,
   getDomainEventHandlers,
-} from '@calcom-alt/domain-core'
+} from '@calcom-alt/ddd-lite'
+import { runtimeServices } from '@calcom-alt/runtime-core'
 
 /** In-memory implementation of DomainEventBus. */
 export class InMemoryDomainEventBus implements DomainEventBus {
+  private logger = runtimeServices.logger
+
   private listeners = new Set<DomainEventListenerCtor>()
   private handlersByEventName = new Map<string, DomainEventHandler[]>()
 
@@ -39,7 +42,7 @@ export class InMemoryDomainEventBus implements DomainEventBus {
     }
 
     if (this.listeners.has(ListenerCtor)) {
-      console.warn(`DomainEventListener ${ListenerCtor.name} is already added.`)
+      this.logger.warn(`${ListenerCtor.name} is already added.`)
       return
     }
 
@@ -52,7 +55,7 @@ export class InMemoryDomainEventBus implements DomainEventBus {
         try {
           await self[method]?.(event)
         } catch (err) {
-          console.error(`${ListenerCtor.name}.${method}()`, err)
+          this.logger.error(`${ListenerCtor.name}.${method}()`, err)
         }
       }
       domainEventNames.forEach((domainEventName) => {

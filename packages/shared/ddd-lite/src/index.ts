@@ -1,3 +1,5 @@
+export * from './ddd-lite-services.js'
+
 export * from './domain-event/domain-event.js'
 export * from './domain-event/domain-event-bus.js'
 export * from './domain-event/domain-event-listener.js'

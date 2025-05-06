@@ -4,13 +4,13 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/shared/domain-core"
+      "path": "./packages/shared/ddd-lite"
     },
     {
-      "path": "./packages/shared/domain-infra"
+      "path": "./packages/shared/infra-core"
     },
     {
-      "path": "./packages/shared/runtime-utils"
+      "path": "./packages/shared/runtime-core"
     }
   ]
 }

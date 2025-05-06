@@ -70,15 +70,18 @@ importers:
         specifier: ^3.1.2
         version: 3.1.2(@types/node@18.16.9)(jiti@2.4.2)(yaml@2.7.1)
 
-  packages/shared/domain-core: {}
+  packages/shared/ddd-lite: {}
 
-  packages/shared/domain-infra:
+  packages/shared/infra-core:
     dependencies:
-      '@calcom-alt/domain-core':
+      '@calcom-alt/ddd-lite':
         specifier: workspace:*
-        version: link:../domain-core
+        version: link:../ddd-lite
+      '@calcom-alt/runtime-core':
+        specifier: workspace:*
+        version: link:../runtime-core
 
-  packages/shared/runtime-utils: {}
+  packages/shared/runtime-core: {}
 
 packages:
 

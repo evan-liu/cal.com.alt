@@ -1,5 +1,5 @@
 {
-  "name": "@calcom-alt/runtime-utils",
+  "name": "@calcom-alt/infra-core",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -13,5 +13,8 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@calcom-alt/runtime-core": "workspace:*",
+    "@calcom-alt/ddd-lite": "workspace:*"
+  }
 }

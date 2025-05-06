@@ -7,15 +7,12 @@ component_management:
       - type: project
         target: auto
   individual_components:
-    - component_id: domain-core
-      name: domain-core
+    - component_id: ddd-lite
       paths:
-        - packages/shared/domain-core/**
-    - component_id: domain-infra
-      name: domain-infra
+        - packages/shared/ddd-lite/**
+    - component_id: infra-core
       paths:
-        - packages/shared/domain-infra/**
-    - component_id: runtime-utils
-      name: runtime-utils
+        - packages/shared/infra-core/**
+    - component_id: runtime-core
       paths:
-        - packages/shared/runtime-utils/**
+        - packages/shared/runtime-core/**

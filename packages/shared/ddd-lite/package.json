@@ -1,5 +1,5 @@
 {
-  "name": "@calcom-alt/domain-infra",
+  "name": "@calcom-alt/ddd-lite",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -13,7 +13,5 @@
     },
     "./package.json": "./package.json"
   },
-  "dependencies": {
-    "@calcom-alt/domain-core": "workspace:*"
-  }
+  "dependencies": {}
 }
