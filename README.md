@@ -1,9 +1,16 @@
+# cal.com.alt
+
 An alternative implementation of [cal.com](https://github.com/calcom/cal.com)
 
 Alternative tech stack.  
 Alternative architecture.
 
 🚧 Work in progress
+
+## Why this project
+
+1. **Tech comparison** – Explore and compare modern tooling in a real-world app.
+2. **Idea sandbox** – Explore architecture and design patterns in a complex business domain.
 
 ## Tech Stack
 
@@ -12,6 +19,7 @@ Alternative architecture.
 | [yarn](https://yarnpkg.com/)                                 | [pnpm](https://pnpm.io/)             | Package manager (workspaces) |
 | [Turborepo](https://turborepo.com/)                          | [nx](https://nx.dev/)                | Monorepo tooling             |
 | [Conventional Commits](https://www.conventionalcommits.org/) | [Gitmoji](https://gitmoji.dev/)      | Commit formatting            |
+| [NestJs](https://nestjs.com/)                                | [Fastify](https://fastify.dev/)      | Web framework (API)          |
 | [Prisma](https://www.prisma.io/)                             | [Drizzle](https://orm.drizzle.team/) | Type-safe ORM                |
 | Dependency Injection                                         | Service Locator                      | IoC pattern                  |
 
@@ -40,7 +48,9 @@ cal.com.alt/
       └─ runtime-core/       # Core runtime interfaces and service locator
 ```
 
-_(Dependency rule: source code dependencies must point downward — lower layers must never depend on higher ones.)_
+_(Dependency rule:
+source code dependencies must point downward —
+lower layers must never depend on higher ones.)_
 
 ## Testing
 
