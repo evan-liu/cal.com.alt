@@ -68,13 +68,15 @@ contexts/<context>-infra  → Integration tests
 shared/*                  → Unit tests (pure logic, utils)
 ```
 
-**Coverage:**
+**Coverage**
 
 [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B)](https://codecov.io/gh/evan-liu/cal.com.alt)
 
-- [`shared/ddd-lite`](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=ddd-lite) ![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=ddd-lite)
-- [`shared/infra-core`](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=infra-core) ![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=infra-core)
-- [`shared/runtime-core`](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=runtime-core) ![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=runtime-core)
+| Package               | Coverage                                                                                                                                                                                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `shared/ddd-lite`     | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=ddd-lite)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=ddd-lite)         |
+| `shared/infra-core`   | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=infra-core)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=infra-core)     |
+| `shared/runtime-core` | [![codecov](https://codecov.io/gh/evan-liu/cal.com.alt/graph/badge.svg?token=8V71PNA50B&component=runtime-core)](https://app.codecov.io/gh/evan-liu/cal.com.alt/tree/main/?displayType=list&components%5B0%5D=runtime-core) |
 
 ## Service Locator
 
