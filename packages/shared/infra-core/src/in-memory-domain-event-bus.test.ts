@@ -84,6 +84,30 @@ describe('InMemoryDomainEventBus', () => {
       ])
     })
 
+    it('should run handlers non-blocking', async () => {
+      vi.useFakeTimers()
+
+      let domainEventBus = new InMemoryDomainEventBus()
+      let listener = new TestListener()
+
+      let handlerFinished = false
+      listener.onTestDomainEvent = async () => {
+        await new Promise((resolve) => setTimeout(resolve, 10))
+        handlerFinished = true
+      }
+
+      domainEventBus.addListener(listener)
+      let publishPromise = domainEventBus.publish(new TestDomainEvent())
+
+      await publishPromise
+      expect(handlerFinished).toBe(false)
+
+      await vi.runAllTimersAsync()
+      expect(handlerFinished).toBe(true)
+
+      vi.useRealTimers()
+    })
+
     it('should do nothing if no handlers are registered for the event', async () => {
       let domainEventBus = new InMemoryDomainEventBus()
       let event = new TestDomainEvent()

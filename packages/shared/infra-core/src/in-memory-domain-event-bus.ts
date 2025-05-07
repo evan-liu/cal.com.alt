@@ -22,7 +22,7 @@ export class InMemoryDomainEventBus implements DomainEventBus {
       let eventName = eventCtor?.eventName || eventCtor?.name
       let handlers = this.handlersByEventName.get(eventName)
       if (handlers?.length) {
-        await Promise.all(handlers.map((handler) => handler(event)))
+        queueMicrotask(() => handlers.forEach((handler) => handler(event)))
       }
     }
   }
