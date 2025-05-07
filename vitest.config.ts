@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'v8',
-      exclude: [...coverageConfigDefaults.exclude, '**/index.ts'],
+      exclude: [...coverageConfigDefaults.exclude, 'apps/**', '**/index.ts'],
     },
   },
 })
