@@ -44,6 +44,7 @@ Structured but flexible. Minimal overhead.
     │  └ 📂 <context>-domain    # Domain logic (pure)
     └ 📂 shared                 # Cross-context utilities
        ├ 📂 infra-core          # Shared infra across app/infra layers
+       ├ 📂 infra-db            # DB adapters, schema, migrations
        ├ 📂 ddd-lite            # DDD-lite base constructs
        └ 📂 runtime-core        # Runtime interfaces and services
 ```

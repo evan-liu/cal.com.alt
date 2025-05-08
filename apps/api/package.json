@@ -5,6 +5,7 @@
   "dependencies": {
     "@calcom-alt/ddd-lite": "workspace:*",
     "@calcom-alt/infra-core": "workspace:*",
+    "@calcom-alt/infra-db": "workspace:*",
     "@calcom-alt/runtime-core": "workspace:*",
     "@fastify/autoload": "~6.0.3",
     "@fastify/sensible": "~6.0.2",

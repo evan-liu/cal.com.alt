@@ -1,5 +1,5 @@
 {
-  "name": "@calcom-alt/infra-core",
+  "name": "@calcom-alt/infra-db",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -14,7 +14,10 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@calcom-alt/ddd-lite": "workspace:*",
-    "@calcom-alt/runtime-core": "workspace:*"
+    "@libsql/client": "^0.15.4",
+    "drizzle-orm": "^0.43.1"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.1"
   }
 }

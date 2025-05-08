@@ -13,6 +13,9 @@
       "path": "./packages/shared/infra-core"
     },
     {
+      "path": "./packages/shared/infra-db"
+    },
+    {
       "path": "./packages/shared/runtime-core"
     }
   ]
