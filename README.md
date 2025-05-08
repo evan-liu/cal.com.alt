@@ -32,20 +32,20 @@ Structured but flexible. Minimal overhead.
 ## Workspace Structure
 
 ```txt
-cal.com.alt/
-├─ apps/
-│  ├─ web/
-│  └─ api/
-└─ packages/
-   ├─ contexts/              # Bounded contexts
-   │  ├─ <context>-ui/       # Context-specific UI
-   │  ├─ <context>-app/      # Use cases, orchestration
-   │  ├─ <context>-infra/    # Infra wiring: DBs, APIs
-   │  └─ <context>-domain/   # Domain logic (pure)
-   └─ shared/                # Cross-context utilities
-      ├─ infra-core/         # Shared infrastructure implementations used across app/infra layers
-      ├─ ddd-lite/           # DDD-lite base constructs: events, decorators, service locator
-      └─ runtime-core/       # Core runtime interfaces and service locator
+📂 cal.com.alt
+ ├ 📂 apps
+ │  ├ 📂 web
+ │  └ 📂 api
+ └ 📂 packages
+    ├ 📂 contexts               # Bounded contexts
+    │  ├ 📂 <context>-ui        # Context-specific UI
+    │  ├ 📂 <context>-app       # Use cases, orchestration
+    │  ├ 📂 <context>-infra     # Infra wiring: DBs, APIs
+    │  └ 📂 <context>-domain    # Domain logic (pure)
+    └ 📂 shared                 # Cross-context utilities
+       ├ 📂 infra-core          # Shared infra across app/infra layers
+       ├ 📂 ddd-lite            # DDD-lite base constructs
+       └ 📂 runtime-core        # Runtime interfaces and services
 ```
 
 _(Dependency rule:
