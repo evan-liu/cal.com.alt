@@ -1,4 +1,4 @@
-# cal.com.alt
+<file name=0 path=README.md># cal.com.alt
 
 An alternative implementation of [cal.com](https://github.com/calcom/cal.com)
 
@@ -29,7 +29,7 @@ Alternative architecture.
 
 Structured but flexible. Minimal overhead.
 
-## Workspace Structure
+### Workspace Structure
 
 ```txt
 📂 cal.com.alt
@@ -38,6 +38,7 @@ Structured but flexible. Minimal overhead.
  │  └ 📂 api
  └ 📂 packages
     ├ 📂 contexts               # Bounded contexts
+    │  ├ 📂 <context>           # Simple supporting/generic domain / no layering
     │  ├ 📂 <context>-ui        # Context-specific UI
     │  ├ 📂 <context>-app       # Use cases, orchestration
     │  ├ 📂 <context>-infra     # Infra wiring: DBs, APIs
@@ -49,9 +50,35 @@ Structured but flexible. Minimal overhead.
        └ 📂 runtime-core        # Runtime interfaces and services
 ```
 
-_(Dependency rule:
-source code dependencies must point downward —
-lower layers must never depend on higher ones.)_
+🧱 **Dependency Rules**
+
+- 🔽 Source code dependencies must flow downward:
+  - 🚫 Lower layers should never depend on higher ones.
+- 🧼 The domain layer must remain pure:
+  - ✅ It should only depend on the architectural framework
+    (DDD-lite) and nothing else.
+
+### DDD-lite
+
+Domain-Driven Design (DDD) is a powerful architectural approach.
+When applied correctly, it reduces overall system complexity.
+However, if misused,
+it can introduce accidental complexity on top of an already complex domain.
+
+```txt
+[ Domain Complexity ]
+         +
+[ Tooling or Approach ]
+         ↓
+[ Lower System Complexity ]
+```
+
+💡 The resulting system—factoring in both domain complexity and accidental complexity introduced by tooling—must be simpler than the domain complexity alone.
+
+Therefore, `cal.com.alt`:
+
+- Introduces DDD constructs only when necessary
+- Applies architectural layering only to core domains
 
 ## Testing
 
