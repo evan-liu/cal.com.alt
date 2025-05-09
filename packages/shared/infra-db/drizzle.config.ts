@@ -1,10 +1,11 @@
-import { defineConfig } from 'drizzle-kit'
+import { type Config } from 'drizzle-kit'
 
-export default defineConfig({
+let url = process.env.DATABASE_URL
+
+export default {
   out: './drizzle',
   schema: './src/schema.ts',
-  dialect: 'sqlite',
-  dbCredentials: {
-    url: ':memory:',
-  },
-})
+  dialect: 'postgresql',
+  dbCredentials: { url },
+  driver: url == ':memory:' || url.startsWith('.') ? 'pglite' : undefined,
+} satisfies Config

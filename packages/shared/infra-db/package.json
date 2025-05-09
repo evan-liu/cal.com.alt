@@ -14,10 +14,10 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@libsql/client": "^0.15.4",
     "drizzle-orm": "^0.43.1"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0",
     "drizzle-kit": "^0.31.1"
   }
 }
