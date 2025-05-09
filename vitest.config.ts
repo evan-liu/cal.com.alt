@@ -4,7 +4,12 @@ export default defineConfig({
   test: {
     coverage: {
       provider: 'v8',
-      exclude: [...coverageConfigDefaults.exclude, 'apps/**', '**/index.ts'],
+      exclude: [
+        ...coverageConfigDefaults.exclude,
+        'apps/**',
+        'packages/shared/infra-db/**',
+        '**/index.ts',
+      ],
     },
   },
 })
