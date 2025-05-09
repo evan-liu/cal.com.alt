@@ -1,16 +1,16 @@
-<file name=0 path=README.md># cal.com.alt
+# cal.com.alt
 
 An alternative implementation of [cal.com](https://github.com/calcom/cal.com)
 
 Alternative tech stack.  
 Alternative architecture.
 
-🚧 Work in progress
+🚧 **Work in progress**
 
 ## Why this project
 
-1. **Tech comparison** – Explore and compare modern tooling in a real-world app.
-2. **Idea sandbox** – Explore architecture and design patterns in a complex business domain.
+1. **Tech comparison** – Try modern tooling on a real app.
+2. **Architecture sandbox** – Test DDD-lite and Clean Architecture patterns.
 
 ## Tech Stack
 
@@ -25,11 +25,15 @@ Alternative architecture.
 
 ## Architecture
 
-`cal.com.alt` reimagines cal.com's design using a pragmatic form of Domain-Driven Design and Clean Architecture in TypeScript—_DDD-lite_.
+`cal.com.alt` reimagines Cal.com’s backend with a pragmatic,
+**DDD-lite** take on Domain-Driven Design and Clean Architecture in TypeScript.
+
+- Adds DDD constructs only when they add real value
+- Layers only the parts that benefit—namely the core domain
 
 Structured but flexible. Minimal overhead.
 
-### Workspace Structure
+### Workspace layout
 
 ```txt
 📂 cal.com.alt
@@ -58,43 +62,13 @@ Structured but flexible. Minimal overhead.
   - ✅ It should only depend on the architectural framework
     (DDD-lite) and nothing else.
 
-### DDD-lite
-
-Domain-Driven Design (DDD) is a powerful architectural approach.
-When applied correctly, it reduces overall system complexity.
-However, if misused,
-it can introduce accidental complexity on top of an already complex domain.
-
-```txt
-[ Domain Complexity ]
-         +
-[ Tooling or Approach ]
-         ↓
-[ Lower System Complexity ]
-```
-
-💡 The resulting system—factoring in both domain complexity and accidental complexity introduced by tooling—must be simpler than the domain complexity alone.
-
-Therefore, `cal.com.alt`:
-
-- Introduces DDD constructs only when necessary
-- Applies architectural layering only to core domains
-
 ## Testing
 
-Follows Clean Architecture principles:
-
-- **Unit** – pure logic (`*-domain`)
-- **Integration** – orchestration, infra wiring (`*-app`, `*-infra`)
-- **E2E** – user flows (`apps/*`)
-
-```txt
-apps/*                    → E2E tests
-contexts/<context>-domain → Unit tests
-contexts/<context>-app    → Integration tests
-contexts/<context>-infra  → Integration tests
-shared/*                  → Unit tests (pure logic, utils)
-```
+| Level       | Location               | What it covers |
+| ----------- | ---------------------- | -------------- |
+| Unit        | `*-domain`, `shared/*` | Pure logic     |
+| Integration | `*-app`, `*-infra`     | DB, ports      |
+| E2E         | `apps/*`               | Full user flow |
 
 **Coverage**
 
