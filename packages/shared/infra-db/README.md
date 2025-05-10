@@ -8,7 +8,7 @@ Shared schema and Drizzle ORM layer used across all contexts in `cal.com.alt`.
 
 ---
 
-## Context map
+## Context p
 
 | Context                  | Type                | Entities / Domain Objects                                                                                    | Depends on / Publishes to                                                                                          |
 | ------------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
@@ -19,7 +19,7 @@ Shared schema and Drizzle ORM layer used across all contexts in `cal.com.alt`.
 | **Automation**           | Supporting          | Workflow, WorkflowStep, Reminder, AIPhoneCallConfiguration                                                   | Subscribes to Scheduling & Notifications                                                                           |
 | **Notifications**        | Generic             | Webhook, ReminderMail, WebhookScheduledTriggers                                                              | Listens to Scheduling & Automation                                                                                 |
 | **Billing / Seats**      | Supporting          | Seat                                                                                                         | Consulted by Scheduling<br>May react to Payments                                                                   |
-| **Feature**              | Supporting          | Feature, TeamFeatures, UserFeatures                                                                          | Consulted by Billing and Scheduling for entitlement & gradual rollout                                              |
+| **FeatureFlags**         | Supporting          | Feature, TeamFeatures, UserFeatures                                                                          | Consulted by Billing and Scheduling for entitlement & gradual rollout                                              |
 | **Analytics**            | Reporting           | Tracking                                                                                                     | Event‑driven read‑models fed by Scheduling                                                                         |
 
 <details>
@@ -77,8 +77,8 @@ flowchart TD
     Seat
   end
 
-  %% Features
-  subgraph Features
+  %% Feature Flags
+  subgraph FeatureFlags
     Feature
   end
 
