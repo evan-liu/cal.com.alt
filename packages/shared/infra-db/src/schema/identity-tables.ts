@@ -8,7 +8,7 @@ import {
 } from 'drizzle-orm/pg-core'
 
 /** Core user record (minimal fields for v2 auth + lookup) */
-export let users = pgTable(
+export let usersTable = pgTable(
   'User',
   {
     id: serial('id').primaryKey(),

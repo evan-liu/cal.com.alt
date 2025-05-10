@@ -1,2 +1,2 @@
-export * from './schema/identity-tables.ts'
-export * from './schema/scheduling-tables.ts'
+export * from './connect-db'
+export * from './schema'

@@ -9,13 +9,13 @@ import {
   text,
   timestamp,
 } from 'drizzle-orm/pg-core'
-import { users } from './identity-tables.ts'
+import { usersTable } from './identity-tables'
 
 /* ---------- Schedule & availability ---------- */
-export let schedules = pgTable('Schedule', {
+export let schedulesTable = pgTable('Schedule', {
   id: serial('id').primaryKey(),
   userId: integer('userId')
-    .references(() => users.id, { onDelete: 'cascade' })
+    .references(() => usersTable.id, { onDelete: 'cascade' })
     .notNull(),
   name: text('name').notNull(),
   timeZone: text('timeZone'),
@@ -23,12 +23,12 @@ export let schedules = pgTable('Schedule', {
   createdAt: timestamp('createdAt', { mode: 'date' }).defaultNow().notNull(),
 })
 
-export let availabilities = pgTable(
+export let availabilitiesTable = pgTable(
   'Availability',
   {
     id: serial('id').primaryKey(),
     scheduleId: integer('scheduleId')
-      .references(() => schedules.id, { onDelete: 'cascade' })
+      .references(() => schedulesTable.id, { onDelete: 'cascade' })
       .notNull(),
     date: timestamp('date', { mode: 'date' }).notNull(),
     startTime: timestamp('startTime', { mode: 'date' }).notNull(),
@@ -38,14 +38,14 @@ export let availabilities = pgTable(
 )
 
 /* ---------- Event type & hosts ---------- */
-export let eventTypes = pgTable(
+export let eventTypesTable = pgTable(
   'EventType',
   {
     id: serial('id').primaryKey(),
-    userId: integer('userId').references(() => users.id, {
+    userId: integer('userId').references(() => usersTable.id, {
       onDelete: 'set null',
     }),
-    scheduleId: integer('scheduleId').references(() => schedules.id),
+    scheduleId: integer('scheduleId').references(() => schedulesTable.id),
     title: text('title').notNull(),
     slug: text('slug').notNull(),
     length: integer('length').notNull(), // minutes
@@ -59,14 +59,14 @@ export let eventTypes = pgTable(
   (t) => [index('evt_slug_idx').on(t.slug), index('evt_user_idx').on(t.userId)],
 )
 
-export let hosts = pgTable(
+export let hostsTable = pgTable(
   'Host',
   {
     userId: integer('userId')
-      .references(() => users.id, { onDelete: 'cascade' })
+      .references(() => usersTable.id, { onDelete: 'cascade' })
       .notNull(),
     eventTypeId: integer('eventTypeId')
-      .references(() => eventTypes.id, { onDelete: 'cascade' })
+      .references(() => eventTypesTable.id, { onDelete: 'cascade' })
       .notNull(),
     isFixed: boolean('isFixed').default(false),
     priority: integer('priority'),
@@ -75,15 +75,15 @@ export let hosts = pgTable(
 )
 
 /* ---------- Booking core ---------- */
-export let bookings = pgTable(
+export let bookingsTable = pgTable(
   'Booking',
   {
     id: serial('id').primaryKey(),
     uid: text('uid').unique().notNull(),
-    userId: integer('userId').references(() => users.id, {
+    userId: integer('userId').references(() => usersTable.id, {
       onDelete: 'set null',
     }),
-    eventTypeId: integer('eventTypeId').references(() => eventTypes.id, {
+    eventTypeId: integer('eventTypeId').references(() => eventTypesTable.id, {
       onDelete: 'set null',
     }),
     startTime: timestamp('startTime', { mode: 'date' }).notNull(),
@@ -101,11 +101,11 @@ export let bookings = pgTable(
 )
 
 /* Optional: simple attendee list */
-export let attendees = pgTable(
+export let attendeesTable = pgTable(
   'Attendee',
   {
     id: serial('id').primaryKey(),
-    bookingId: integer('bookingId').references(() => bookings.id, {
+    bookingId: integer('bookingId').references(() => bookingsTable.id, {
       onDelete: 'cascade',
     }),
     email: text('email').notNull(),
