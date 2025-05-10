@@ -44,12 +44,14 @@ graph TB
   Domain[contexts/scheduling-domain]
   DDD[shared/ddd-lite]
   InfraCore[shared/infra-core]
+  InfraDb[shared/infra-db]
 
   App --> Infra
   App --> Domain
   App --> InfraCore
   Infra --> InfraCore
   Infra --> Domain
+  Infra --> InfraDb
   Domain --> DDD
 ```
 
