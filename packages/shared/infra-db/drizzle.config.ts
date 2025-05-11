@@ -4,7 +4,7 @@ let url = process.env.DATABASE_URL
 
 export default {
   out: './drizzle',
-  schema: './src/schema',
+  schema: './dist/src/schema.js',
   dialect: 'postgresql',
   dbCredentials: { url },
   driver: url == ':memory:' || url.startsWith('.') ? 'pglite' : undefined,

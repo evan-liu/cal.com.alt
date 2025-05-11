@@ -4,15 +4,15 @@
 .local-db/
 
 # compiled output
-dist
-tmp
-out-tsc
+dist/
+tmp/
+out-tsc/
 
 # dependencies
 node_modules
 
 # IDEs and editors
-/.idea
+.idea/
 .project
 .classpath
 .c9/

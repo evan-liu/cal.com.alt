@@ -4,8 +4,7 @@
     "outDir": "dist",
     "types": ["node"],
     "rootDir": "src",
-    "module": "Preserve",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
     "verbatimModuleSyntax": false
   },

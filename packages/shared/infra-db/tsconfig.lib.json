@@ -6,8 +6,7 @@
     "outDir": "dist",
     "tsBuildInfoFile": "dist/tsconfig.lib.tsbuildinfo",
     "emitDeclarationOnly": true,
-    "module": "Preserve",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
     "types": ["node"]
   },
   "include": ["src/**/*.ts"],

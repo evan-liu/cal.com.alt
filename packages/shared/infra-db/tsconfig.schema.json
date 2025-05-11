@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "skipLibCheck": true
+  },
+  "files": ["src/schema.ts"]
+}

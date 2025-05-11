@@ -1,13 +1,15 @@
 import { PgDatabase } from 'drizzle-orm/pg-core'
 
-// Use pglite for local dev for now
+// Temporary: Use pglite for local dev
 import { drizzle } from 'drizzle-orm/pglite'
 
-let url = process.env.DATABASE_URL
-if (!url) throw new Error('DATABASE_URL is not defined')
-
-let db = drizzle(url)
+// Temporary: Use globalThis.__db so that tests can inject mock db
+let global = globalThis as unknown as { __db: PgDatabase<any> | undefined }
 
 export async function connectDb(): Promise<PgDatabase<any>> {
-  return db
+  if (!global.__db) {
+    let url = process.env.DATABASE_URL
+    global.__db = url ? drizzle(url) : drizzle()
+  }
+  return global.__db
 }

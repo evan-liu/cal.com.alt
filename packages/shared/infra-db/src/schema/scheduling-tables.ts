@@ -9,7 +9,7 @@ import {
   text,
   timestamp,
 } from 'drizzle-orm/pg-core'
-import { usersTable } from './identity-tables'
+import { usersTable } from './identity-tables.js'
 
 /* ---------- Schedule & availability ---------- */
 export let schedulesTable = pgTable('Schedule', {
