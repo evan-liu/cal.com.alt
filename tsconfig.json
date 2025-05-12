@@ -17,6 +17,15 @@
     },
     {
       "path": "./packages/shared/runtime-core"
+    },
+    {
+      "path": "./packages/contexts/scheduling-core"
+    },
+    {
+      "path": "./packages/contexts/scheduling-app"
+    },
+    {
+      "path": "./packages/contexts/scheduling-infra"
     }
   ]
 }

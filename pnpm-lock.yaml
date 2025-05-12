@@ -110,6 +110,36 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0
 
+  packages/contexts/scheduling-app:
+    dependencies:
+      '@calcom-alt/ddd-lite':
+        specifier: workspace:*
+        version: link:../../shared/ddd-lite
+      '@calcom-alt/runtime-core':
+        specifier: workspace:*
+        version: link:../../shared/runtime-core
+      '@calcom-alt/scheduling-core':
+        specifier: workspace:*
+        version: link:../scheduling-core
+
+  packages/contexts/scheduling-core:
+    dependencies:
+      '@calcom-alt/ddd-lite':
+        specifier: workspace:*
+        version: link:../../shared/ddd-lite
+
+  packages/contexts/scheduling-infra:
+    dependencies:
+      '@calcom-alt/infra-db':
+        specifier: workspace:*
+        version: link:../../shared/infra-db
+      '@calcom-alt/runtime-core':
+        specifier: workspace:*
+        version: link:../../shared/runtime-core
+      '@calcom-alt/scheduling-core':
+        specifier: workspace:*
+        version: link:../scheduling-core
+
   packages/shared/ddd-lite: {}
 
   packages/shared/infra-core:
