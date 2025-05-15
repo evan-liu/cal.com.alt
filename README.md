@@ -1,3 +1,28 @@
+# cal.com.alt
+
+An alternative implementation of [cal.com](https://github.com/calcom/cal.com)
+
+Alternative tech stack.  
+Alternative architecture.
+
+🚧 **Work in progress**
+
+## Why this project
+
+1. **Tech comparison** – Try modern tooling on a real app.
+2. **Architecture sandbox** – Test DDD-lite and Clean Architecture patterns.
+
+## Tech Stack
+
+| cal.com                                                      | .alt                                 | Description                  |
+| ------------------------------------------------------------ | ------------------------------------ | ---------------------------- |
+| [yarn](https://yarnpkg.com/)                                 | [pnpm](https://pnpm.io/)             | Package manager (workspaces) |
+| [Turborepo](https://turborepo.com/)                          | [nx](https://nx.dev/)                | Monorepo tooling             |
+| [Conventional Commits](https://www.conventionalcommits.org/) | [Gitmoji](https://gitmoji.dev/)      | Commit formatting            |
+| [NestJs](https://nestjs.com/)                                | [Fastify](https://fastify.dev/)      | Web framework (API)          |
+| [Prisma](https://www.prisma.io/)                             | [Drizzle](https://orm.drizzle.team/) | Type-safe ORM                |
+| Dependency Injection                                         | Service Locator                      | IoC pattern                  |
+
 ## Architecture
 
 `cal.com.alt` reimagines Cal.com’s backend with a pragmatic,
