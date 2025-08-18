@@ -7,15 +7,15 @@
     "@calcom-alt/infra-core": "workspace:*",
     "@calcom-alt/infra-db": "workspace:*",
     "@calcom-alt/runtime-core": "workspace:*",
-    "@fastify/autoload": "~6.0.3",
-    "@fastify/sensible": "~6.0.2",
-    "fastify": "~5.2.1",
+    "@fastify/autoload": "~6.3.1",
+    "@fastify/sensible": "~6.0.3",
+    "fastify": "~5.5.0",
     "fastify-plugin": "~5.0.1"
   },
   "devDependencies": {
-    "@nx/esbuild": "^21.0.0",
+    "@nx/esbuild": "^21.4.0",
     "@types/supertest": "^6.0.3",
-    "esbuild": "^0.25.4",
-    "supertest": "^7.1.0"
+    "esbuild": "^0.25.9",
+    "supertest": "^7.1.4"
   }
 }
