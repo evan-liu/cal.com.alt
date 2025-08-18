@@ -7,25 +7,25 @@
       "path": "./apps/api"
     },
     {
-      "path": "./packages/shared/ddd-lite"
+      "path": "./packages/be-shared/ddd-lite"
     },
     {
-      "path": "./packages/shared/infra-core"
+      "path": "./packages/be-shared/infra-core"
     },
     {
-      "path": "./packages/shared/infra-db"
+      "path": "./packages/be-shared/infra-db"
     },
     {
-      "path": "./packages/shared/runtime-core"
+      "path": "./packages/be-shared/runtime-core"
     },
     {
-      "path": "./packages/contexts/scheduling-core"
+      "path": "./packages/be-contexts/scheduling-core"
     },
     {
-      "path": "./packages/contexts/scheduling-app"
+      "path": "./packages/be-contexts/scheduling-app"
     },
     {
-      "path": "./packages/contexts/scheduling-infra"
+      "path": "./packages/be-contexts/scheduling-infra"
     }
   ]
 }

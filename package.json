@@ -13,7 +13,7 @@
     "test:watch": "vitest --project unit",
     "test:coverage": "vitest run --project unit --coverage",
     "test:e2e": "vitest run --project e2e",
-    "db:schema": "tsc --project packages/shared/infra-db/tsconfig.schema.json"
+    "db:schema": "tsc --project packages/be-shared/infra-db/tsconfig.schema.json"
   },
   "dependencies": {
     "tslib": "^2.8.1"

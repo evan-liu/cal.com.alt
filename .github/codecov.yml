@@ -9,10 +9,10 @@ component_management:
   individual_components:
     - component_id: ddd-lite
       paths:
-        - packages/shared/ddd-lite/**
+        - packages/be-shared/ddd-lite/**
     - component_id: infra-core
       paths:
-        - packages/shared/infra-core/**
+        - packages/be-shared/infra-core/**
     - component_id: runtime-core
       paths:
-        - packages/shared/runtime-core/**
+        - packages/be-shared/runtime-core/**

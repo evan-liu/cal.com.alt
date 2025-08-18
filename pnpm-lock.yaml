@@ -74,16 +74,16 @@ importers:
     dependencies:
       '@calcom-alt/ddd-lite':
         specifier: workspace:*
-        version: link:../../packages/shared/ddd-lite
+        version: link:../../packages/be-shared/ddd-lite
       '@calcom-alt/infra-core':
         specifier: workspace:*
-        version: link:../../packages/shared/infra-core
+        version: link:../../packages/be-shared/infra-core
       '@calcom-alt/infra-db':
         specifier: workspace:*
-        version: link:../../packages/shared/infra-db
+        version: link:../../packages/be-shared/infra-db
       '@calcom-alt/runtime-core':
         specifier: workspace:*
-        version: link:../../packages/shared/runtime-core
+        version: link:../../packages/be-shared/runtime-core
       '@fastify/autoload':
         specifier: ~6.3.1
         version: 6.3.1
@@ -110,39 +110,39 @@ importers:
         specifier: ^7.1.4
         version: 7.1.4
 
-  packages/contexts/scheduling-app:
+  packages/be-contexts/scheduling-app:
     dependencies:
       '@calcom-alt/ddd-lite':
         specifier: workspace:*
-        version: link:../../shared/ddd-lite
+        version: link:../../be-shared/ddd-lite
       '@calcom-alt/runtime-core':
         specifier: workspace:*
-        version: link:../../shared/runtime-core
+        version: link:../../be-shared/runtime-core
       '@calcom-alt/scheduling-core':
         specifier: workspace:*
         version: link:../scheduling-core
 
-  packages/contexts/scheduling-core:
+  packages/be-contexts/scheduling-core:
     dependencies:
       '@calcom-alt/ddd-lite':
         specifier: workspace:*
-        version: link:../../shared/ddd-lite
+        version: link:../../be-shared/ddd-lite
 
-  packages/contexts/scheduling-infra:
+  packages/be-contexts/scheduling-infra:
     dependencies:
       '@calcom-alt/infra-db':
         specifier: workspace:*
-        version: link:../../shared/infra-db
+        version: link:../../be-shared/infra-db
       '@calcom-alt/runtime-core':
         specifier: workspace:*
-        version: link:../../shared/runtime-core
+        version: link:../../be-shared/runtime-core
       '@calcom-alt/scheduling-core':
         specifier: workspace:*
         version: link:../scheduling-core
 
-  packages/shared/ddd-lite: {}
+  packages/be-shared/ddd-lite: {}
 
-  packages/shared/infra-core:
+  packages/be-shared/infra-core:
     dependencies:
       '@calcom-alt/ddd-lite':
         specifier: workspace:*
@@ -151,7 +151,7 @@ importers:
         specifier: workspace:*
         version: link:../runtime-core
 
-  packages/shared/infra-db:
+  packages/be-shared/infra-db:
     dependencies:
       drizzle-orm:
         specifier: ^0.44.4
@@ -164,7 +164,7 @@ importers:
         specifier: ^0.31.4
         version: 0.31.4
 
-  packages/shared/runtime-core: {}
+  packages/be-shared/runtime-core: {}
 
 packages:
 

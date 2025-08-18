@@ -21,7 +21,7 @@ export default defineConfig({
         ...coverageConfigDefaults.exclude,
         'tmp/**',
         'apps/**',
-        'packages/shared/infra-db/**',
+        'packages/be-shared/infra-db/**',
         '**/index.ts',
       ],
     },
