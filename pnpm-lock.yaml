@@ -166,6 +166,8 @@ importers:
 
   packages/be-shared/runtime-core: {}
 
+  packages/shared/service-locator: {}
+
 packages:
 
   '@ampproject/remapping@2.3.0':

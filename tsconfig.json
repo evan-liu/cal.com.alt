@@ -26,6 +26,9 @@
     },
     {
       "path": "./packages/be-contexts/scheduling-infra"
+    },
+    {
+      "path": "./packages/shared/service-locator"
     }
   ]
 }
