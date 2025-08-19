@@ -7,11 +7,11 @@ import {
   type DomainEventListenerCtor,
   getDomainEventHandlers,
 } from '@calcom-alt/ddd-lite'
-import { runtimeServices } from '@calcom-alt/runtime-core'
+import { getLogger } from '@calcom-alt/runtime-core'
 
 /** In-memory implementation of DomainEventBus. */
 export class InMemoryDomainEventBus implements DomainEventBus {
-  private logger = runtimeServices.logger
+  private logger = getLogger()
 
   private listeners = new Set<DomainEventListenerCtor>()
   private handlersByEventName = new Map<string, DomainEventHandler[]>()

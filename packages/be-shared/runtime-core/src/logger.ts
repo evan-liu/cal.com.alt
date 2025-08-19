@@ -1,3 +1,5 @@
+import { serviceLocator } from '@calcom-alt/service-locator'
+
 /**
  * Standardized runtime logger interface.
  *
@@ -24,3 +26,5 @@ export interface Logger {
    */
   child(context: Record<string, unknown>): Logger
 }
+
+export let [getLogger, setLogger] = serviceLocator<Logger>()

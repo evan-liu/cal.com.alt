@@ -84,6 +84,9 @@ importers:
       '@calcom-alt/runtime-core':
         specifier: workspace:*
         version: link:../../packages/be-shared/runtime-core
+      '@calcom-alt/service-locator':
+        specifier: workspace:*
+        version: link:../../packages/shared/service-locator
       '@fastify/autoload':
         specifier: ~6.3.1
         version: 6.3.1
@@ -140,7 +143,11 @@ importers:
         specifier: workspace:*
         version: link:../scheduling-core
 
-  packages/be-shared/ddd-lite: {}
+  packages/be-shared/ddd-lite:
+    dependencies:
+      '@calcom-alt/service-locator':
+        specifier: workspace:*
+        version: link:../../shared/service-locator
 
   packages/be-shared/infra-core:
     dependencies:
@@ -150,6 +157,9 @@ importers:
       '@calcom-alt/runtime-core':
         specifier: workspace:*
         version: link:../runtime-core
+      '@calcom-alt/service-locator':
+        specifier: workspace:*
+        version: link:../../shared/service-locator
 
   packages/be-shared/infra-db:
     dependencies:
@@ -164,7 +174,11 @@ importers:
         specifier: ^0.31.4
         version: 0.31.4
 
-  packages/be-shared/runtime-core: {}
+  packages/be-shared/runtime-core:
+    dependencies:
+      '@calcom-alt/service-locator':
+        specifier: workspace:*
+        version: link:../../shared/service-locator
 
   packages/shared/service-locator: {}
 

@@ -1,3 +1,4 @@
+import { serviceLocator } from '@calcom-alt/service-locator'
 import type {
   DomainEventListener,
   DomainEventListenerCtor,
@@ -22,3 +23,5 @@ export interface DomainEventBus {
     listeners: ReadonlyArray<DomainEventListener | DomainEventListenerCtor>,
   ): void
 }
+
+export let [getEventBus, setEventBus] = serviceLocator<DomainEventBus>()

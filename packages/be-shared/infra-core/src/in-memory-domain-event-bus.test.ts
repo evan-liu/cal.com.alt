@@ -4,7 +4,7 @@ import {
   type DomainEventListener,
   onDomainEvent,
 } from '@calcom-alt/ddd-lite'
-import { registerServices, runtimeServices } from '@calcom-alt/runtime-core'
+import { setLogger } from '@calcom-alt/runtime-core'
 import { beforeAll, describe, expect, it, vi } from 'vitest'
 import { InMemoryDomainEventBus } from './in-memory-domain-event-bus.js'
 
@@ -27,9 +27,7 @@ class TestListener implements DomainEventListener {
 
 describe('InMemoryDomainEventBus', () => {
   beforeAll(() => {
-    registerServices(runtimeServices, {
-      logger: { warn: vi.fn(), error: vi.fn() },
-    } as any) // eslint-disable-line @typescript-eslint/no-explicit-any
+    setLogger(() => ({ warn: vi.fn(), error: vi.fn() }) as any)
   })
 
   describe('publish()', () => {

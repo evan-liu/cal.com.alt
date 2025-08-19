@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@calcom-alt/ddd-lite": "workspace:*",
-    "@calcom-alt/runtime-core": "workspace:*"
+    "@calcom-alt/runtime-core": "workspace:*",
+    "@calcom-alt/service-locator": "workspace:*"
   }
 }

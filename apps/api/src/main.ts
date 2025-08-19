@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
 import { app } from './app/app.js'
-import { serviceLocator } from './app/service-locator.js'
+import { setupServiceLocator } from './app/setup-service-locator'
 
 let host = process.env.HOST ?? 'localhost'
 let port = process.env.PORT ? Number(process.env.PORT) : 3000
@@ -23,7 +23,7 @@ export function buildApp() {
     logger: true,
   })
 
-  fastify.register(serviceLocator)
+  fastify.register(setupServiceLocator)
 
   fastify.register(app)
 
