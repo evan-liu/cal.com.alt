@@ -120,6 +120,7 @@ which can defeat the purpose of IoC.
 
 - No framework coupling or decorators
 - Pure TypeScript interfaces with lazy initialization
+- True interface-based, no concrete class or string tokens
 - Type-safe with Symbol-based service keys
 - Simple tuple-based API
 
