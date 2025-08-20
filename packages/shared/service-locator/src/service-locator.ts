@@ -1,40 +1,51 @@
-/**
- * Creates a type-safe service locator with lazy initialization.
- *
- * @example
- * let [getLogger, setLogger] = serviceLocator<Logger>()
- * setLogger(() => new ConsoleLogger())
- * let logger = getLogger() // Created lazily
- *
- * @returns Tuple of [get, set] functions for the service
- */
-export function serviceLocator<T>() {
-  let instance: T | undefined
-  let factory: (() => T) | undefined
+let registry = new Map<
+  symbol,
+  { instance?: unknown; factory?: () => unknown }
+>()
 
-  return [
-    function get(): T {
-      if (instance) return instance
+/** Service locator with lazy initialization and type safety. */
+export let serviceLocator = {
+  /**
+   * Creates a type-safe service locator for type T.
+   *
+   * @example
+   * let [getLogger, setLogger] = serviceLocator.for<Logger>()
+   * setLogger(() => new ConsoleLogger())
+   * let logger = getLogger() // Created lazily
+   *
+   * @returns Tuple of [get, set] functions
+   */
+  for<T>() {
+    let key = Symbol()
+    return [
+      function get(): T {
+        return (registry.get(key)?.instance ?? createInstance(key)) as T
+      },
+      function set(factory: () => T): void {
+        registry.set(key, { factory })
+      },
+    ] as const
+  },
 
-      if (!factory) {
-        throw new Error(
-          'Service not registered. Call set() first to register a service factory.',
-        )
-      }
+  /** Clears all registered services. Useful for testing. */
+  reset() {
+    registry.clear()
+  },
+}
 
-      try {
-        instance = factory()
-        factory = undefined // Allow GC of factory and its closures
-        return instance
-      } catch (error) {
-        throw new Error(
-          `Failed to create service: ${error instanceof Error ? error.message : String(error)}`,
-        )
-      }
-    },
+function createInstance(key: symbol) {
+  let entry = registry.get(key)
+  if (!entry?.factory) {
+    throw new Error('Service not registered. Call set() first.')
+  }
 
-    function set(serviceFactory: () => T): void {
-      factory = serviceFactory
-    },
-  ] as const
+  try {
+    let instance = entry.factory()
+    registry.set(key, { instance })
+    return instance
+  } catch (error) {
+    throw new Error(
+      `Failed to create service: ${error instanceof Error ? error.message : String(error)}`,
+    )
+  }
 }

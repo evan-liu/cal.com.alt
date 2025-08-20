@@ -24,4 +24,4 @@ export interface DomainEventBus {
   ): void
 }
 
-export let [getEventBus, setEventBus] = serviceLocator<DomainEventBus>()
+export let [getEventBus, setEventBus] = serviceLocator.for<DomainEventBus>()
