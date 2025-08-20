@@ -2,10 +2,11 @@ import { coverageConfigDefaults, defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    workspace: [
+    projects: [
       {
         test: {
           name: 'unit',
+          setupFiles: ['./vitest.setup.ts'],
         },
       },
       {

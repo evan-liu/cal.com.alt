@@ -27,4 +27,4 @@ export interface Logger {
   child(context: Record<string, unknown>): Logger
 }
 
-export let [getLogger, setLogger] = serviceLocator<Logger>()
+export let [getLogger, setLogger] = serviceLocator.for<Logger>()

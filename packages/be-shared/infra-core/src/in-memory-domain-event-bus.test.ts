@@ -5,7 +5,7 @@ import {
   onDomainEvent,
 } from '@calcom-alt/ddd-lite'
 import { setLogger } from '@calcom-alt/runtime-core'
-import { beforeAll, describe, expect, it, vi } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { InMemoryDomainEventBus } from './in-memory-domain-event-bus.js'
 
 /* eslint-disable @typescript-eslint/no-empty-function */
@@ -26,7 +26,7 @@ class TestListener implements DomainEventListener {
 }
 
 describe('InMemoryDomainEventBus', () => {
-  beforeAll(() => {
+  beforeEach(() => {
     setLogger(() => ({ warn: vi.fn(), error: vi.fn() }) as any)
   })
 
