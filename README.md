@@ -145,7 +145,7 @@ setLogger(() => new ConsoleLogger())
 let logger = getLogger() // Created lazily, singleton behavior
 ```
 
-This setup aims for simplicity and decoupling, avoiding DI complexity while maintaining type safety.
+This setup aims for simplicity and decoupling, avoiding DI complexity while maintaining type safety through true interface-based design with no concrete class or string tokens.
 
 ## Coding Style
 
