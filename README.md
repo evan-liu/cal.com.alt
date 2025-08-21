@@ -116,27 +116,34 @@ Many TypeScript DI frameworks introduce tight coupling through decorators,
 metadata, or framework-specific setup —
 which can defeat the purpose of IoC.
 
-`cal.com.alt` takes a pragmatic approach using TypeScript interfaces for service location:
+`cal.com.alt` takes a pragmatic approach using a type-safe service locator:
 
-- No framework coupling
-- Pure TypeScript interfaces and types
-- Simple runtime configuration
-- Type-safe without string lookups
+- No framework coupling or decorators
+- Interface-based with Symbol keys (no string tokens or concrete classes)
+- Lazy initialization with tuple-based API
 
 Example:
 
 ```ts
+import { serviceLocator } from '@calcom-alt/service-locator'
+
 // Service interface to depend on
-interface Logger {}
+interface Logger {
+  info(message: string): void
+  error(message: string): void
+}
 
-// Service locator
-let runtimeServices = {} as { logger: Logger }
+// Create type-safe getter/setter pair
+let [getLogger, setLogger] = serviceLocator.for<Logger>()
 
-// Configure the service locators at application bootstrap
-registerServices(runtimeServices, { logger: new ConsoleLogger() })
+// Configure at application bootstrap
+setLogger(() => new ConsoleLogger())
+
+// Use anywhere in the application
+let logger = getLogger() // Created lazily, singleton behavior
 ```
 
-This setup aims for simplicity and decoupling, avoiding DI complexity.
+This setup aims for simplicity and decoupling, avoiding DI complexity while maintaining type safety.
 
 ## Coding Style
 
