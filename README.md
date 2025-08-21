@@ -119,10 +119,8 @@ which can defeat the purpose of IoC.
 `cal.com.alt` takes a pragmatic approach using a type-safe service locator:
 
 - No framework coupling or decorators
-- Pure TypeScript interfaces with lazy initialization
-- True interface-based, no concrete class or string tokens
-- Type-safe with Symbol-based service keys
-- Simple tuple-based API
+- Interface-based with Symbol keys (no string tokens or concrete classes)
+- Lazy initialization with tuple-based API
 
 Example:
 
@@ -145,7 +143,7 @@ setLogger(() => new ConsoleLogger())
 let logger = getLogger() // Created lazily, singleton behavior
 ```
 
-This setup aims for simplicity and decoupling, avoiding DI complexity while maintaining type safety through true interface-based design with no concrete class or string tokens.
+This setup aims for simplicity and decoupling, avoiding DI complexity while maintaining type safety.
 
 ## Coding Style
 
